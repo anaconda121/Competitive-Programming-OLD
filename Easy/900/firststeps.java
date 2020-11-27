@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class firststeps {
+    /* https://codeforces.com/problemset/problem/580/A */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int days = sc.nextInt();
@@ -8,24 +9,24 @@ public class firststeps {
             money[i] = sc.nextInt();
         }
         subsegmentNumbers(money);
+        sc.close();
     }
     public static void subsegmentNumbers(int[] numbers) {
-        int counter = 0;
         int largest = Integer.MIN_VALUE;
+        int[] counterStreaks = new int[numbers.length];
+        int counterIndex = 0;
         for (int i = 0; i < numbers.length; i++) {
-            if (i < numbers.length - 1 && numbers[i] <= numbers[i+1]) {
-                counter++;
+            if (i > 0 && numbers[i] >= numbers[i-1]) {
+                counterStreaks[counterIndex]++;
             } else {
-                System.out.println("resetting");
-                counter = 0;
-            }
-            if (largest < numbers[i]) {
-                largest = i;
+                counterIndex++;
             }
         }
-        if (largest == numbers.length - 1){
-            counter++;
+        for (int i = 0; i < counterStreaks.length; i++) {
+            if (counterStreaks[i] > largest) {
+                largest = counterStreaks[i];
+            }
         }
-        System.out.println(counter);
+        System.out.println(largest + 1);
     }
 }
