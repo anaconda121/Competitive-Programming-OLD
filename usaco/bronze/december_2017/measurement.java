@@ -48,6 +48,8 @@ public class measurement {
             int change = Integer.valueOf(outcome);
             //System.out.println(change);
             boolean inMap = alreadyIn(cowGallons, sepValues[1]);
+            int clone = timesChanged;
+
             if (inMap) {
                 //System.out.println("in map: " + sepValues[1]);
                 //System.out.println("previous: " + cowGallons.get(sepValues[1]));
@@ -56,26 +58,38 @@ public class measurement {
                 cowGallons.put(sepValues[1], change);
             }
 
-            //System.out.println(cowGallons);
-            //different scenarios
-            if (cowGallons.size() > currentHashMapSize && bestIncrease(cowGallons) > greatestIncrease) {
-                //update is needed
-                timesChanged++;
-                leaders[index] = getKey(cowGallons, bestIncrease(cowGallons));
-                //System.out.println("timesChanged: " + timesChanged);
-                //System.out.println(Arrays.toString(leaders));
-            } else if (cowGallons.size() == currentHashMapSize && bestIncrease(cowGallons) == greatestIncrease) {
-                //tie in leaders, still need to update
-                timesChanged++;
-                index++;
-                leaders[index] = getKey(cowGallons, bestIncrease(cowGallons));
-                //System.out.println("timesChanged: " + timesChanged);
-                //System.out.println(Arrays.toString(leaders));
+            //deciding whether or not to change portraits
+            if (cowGallons.size() > currentHashMapSize) {
+                if (cowGallons.size() > 1) {
+                    greatestIncrease = bestIncrease(cowGallons);
+                }
+                if (bestIncrease(cowGallons) > greatestIncrease) {
+                    System.out.println("bestIncrease function: " + bestIncrease(cowGallons));
+                    leaders = null;
+                    leaders = calcLeaders(cowGallons);
+                    numLeaders = countReal(leaders);
+                    timesChanged++;
+                    System.out.println("time changed: " + timesChanged + " , leader changed to: " + Arrays.toString(leaders));
+                }
+            } else if (cowGallons.size() == currentHashMapSize) {
+                if (countReal(leaders) > numLeaders) {
+                    // tie
+                    leaders = null;
+                    leaders = calcLeaders(cowGallons);
+                    numLeaders = countReal(leaders);
+                    timesChanged++;
+                    System.out.println("time changed: " + timesChanged + " , there was a tie");
+                    System.out.println(Arrays.toString(leaders));
+                }
+            }
+
+            if (cowGallons.size() > currentHashMapSize) {
+                greatestIncrease = bestIncrease(cowGallons);
+                System.out.println(greatestIncrease);
             }
             currentHashMapSize = cowGallons.size();
-            greatestIncrease = bestIncrease(cowGallons);
             System.out.println(cowGallons);
-            //cowGallons.values() += 7;
+            
 
         }
         out.println(timesChanged);
@@ -83,13 +97,32 @@ public class measurement {
         out.close();
     }
 
-    public static String getKey(HashMap <String, Integer> map, int value) {
-        for (String key : map.keySet()) {
-            if (value == map.get(key)) {
-                return key;
+    public static String[] calcLeaders(HashMap <String, Integer> cowGallons) {
+        int greatestValue = bestIncrease(cowGallons);
+        String[] leaders = getKey(cowGallons, greatestValue);
+        return leaders;
+    }
+
+    public static int countReal(String[] leader) {
+        int count = 0;
+        for (int i = 0; i < leader.length; i++) {
+            if (leader[i] == null) {
+                count++;
             }
         }
-        return "";
+        return leader.length - count;
+    }
+
+    public static String[] getKey(HashMap <String, Integer> map, int value) {
+        int index = 0;
+        String[] leaders = new String[map.size()];
+        for (String key : map.keySet()) {
+            if (value == map.get(key)) {
+                leaders[index] = key;
+                index++;
+            }
+        }
+        return leaders;
     }
 
     public static int bestIncrease(HashMap<String, Integer> cowGallons) {

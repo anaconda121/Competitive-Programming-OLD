@@ -49,3 +49,32 @@
 50 Mildred +3
 30 Elsie +2
 78 Elsie -2
+
+
+System.out.println("before bIncrease: " +bestIncrease(cowGallons));
+            System.out.println("before no method gIncrease: " + greatestIncrease);
+            //System.out.println(cowGallons);
+            //different scenarios
+            if (cowGallons.size() > currentHashMapSize && bestIncrease(cowGallons) > greatestIncrease) {
+                //update is needed
+                timesChanged++;
+                leaders[index] = getKey(cowGallons, bestIncrease(cowGallons));
+                System.out.println("timesChanged clause 1: " + timesChanged);
+                System.out.println(Arrays.toString(leaders));
+            } else if (cowGallons.size() == currentHashMapSize) {
+                if (cowGallons.size() > 1 && bestIncrease(cowGallons) == greatestIncrease) {
+                    //tie in leaders, still need to update
+                    timesChanged++;
+                    index++;
+                    leaders[index] = getKey(cowGallons, bestIncrease(cowGallons));
+                    System.out.println("timesChanged clause 2: " + timesChanged);
+                    System.out.println(Arrays.toString(leaders));
+                }
+            }
+            currentHashMapSize = cowGallons.size();
+            clone -= timesChanged;
+            if ( clone < 0) {
+                greatestIncrease = bestIncrease(cowGallons);
+            }
+            System.out.println("after gIncrease: " + greatestIncrease + " \n");
+            //cowGallons.values() += 7;
