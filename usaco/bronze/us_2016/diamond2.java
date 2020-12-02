@@ -18,7 +18,7 @@ public class diamond2 {
         //System.out.println(diamonds + " , " + diff);
         //calc diamonds
         Arrays.sort(sizes);
-        //System.out.println(Arrays.toString(sizes));
+        System.out.println(Arrays.toString(sizes));
         int count = 0;
         int max = -75;
         for (int i = 0; i < sizes.length; i++) {
