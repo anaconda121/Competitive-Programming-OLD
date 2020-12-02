@@ -21,22 +21,22 @@ public class speeding {
                 in.nextLine();
             }
         }
+        //System.out.println(Arrays.toString(roadMph));
+        //System.out.println(Arrays.toString(bessieMph));
         //calc time
         int max = Integer.MIN_VALUE;
         int diff = 0;
-        for (int i = 0; i < segments; i++) {
+        for (int i = 0; i < segments +1; i++) {
             for (int j = 0; j < 101; j++) {
                 int rIndex = calcIndexRoad(roadTimes, j); int bIndex = calcIndexBessie(bessieTimes, j);
                 //System.out.println("time j : " + j + " , " + rIndex + " , " + bIndex);
-                if (j < roadTimes[rIndex] && j < bessieTimes[bIndex]) {
+                if (j <= roadTimes[rIndex] && j <= bessieTimes[bIndex]) {
                     //calc respective mphs
-                    diff = Math.max(diff, bessieMph[bIndex]-roadMph[rIndex]);//calcMphDiff(j, roadMph[rIndex], bessieMph[bIndex]);
+                    diff = calcMphDiff(j, roadMph[rIndex], bessieMph[bIndex]);
                     //System.out.println("time : " + j + " , " + roadTimes[rIndex] + " , " + bessieTimes[bIndex] + " , " + diff);
+                    
                 }
-                if (j > 25) {
-                    System.out.println(diff);
-
-                }
+                
                 if (diff > max) {
                     //System.out.println("storing " + diff);
                     max = diff;
@@ -44,7 +44,11 @@ public class speeding {
                 diff = 0;
             }
         }
-        out.println(max);
+        if (max < 0 ) {
+            out.println(0);
+        } else {
+            out.println(max);
+        }
         out.close();
     }
 
