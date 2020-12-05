@@ -29,7 +29,7 @@ public class billboard2 {
         //if 3 / 4 corners are covered, tarp = 0
         //if 0 corners are covered, tarp = whole area
         int covered = covers(grass[0], grass[2], grass[1], grass[1], grass[2], grass[0], grass[3], grass[3], lawnmower[0], lawnmower[2], lawnmower[1], lawnmower[1], lawnmower[2], lawnmower[0], lawnmower[3], lawnmower[3]);
-        //System.out.println("output: " + covered);
+        System.out.println("output: " + covered);
 
         if (covered == 1 || covered== 0) minCover = totalArea;
         if (covered == 2) minCover = totalArea - currOverlap;
