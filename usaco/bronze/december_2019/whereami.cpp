@@ -9,7 +9,7 @@ string S;
  
 bool dups(int len, set<string> X)
 {
-  for (int i=0; i<=N-len; i++) {
+  for (int i=0; i<=N; i++) {
     if (X.count(S.substr(i,len)) > 0) return true;
     X.insert(S.substr(i,len));
   }
