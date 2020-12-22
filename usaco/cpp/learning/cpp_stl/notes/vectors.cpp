@@ -28,6 +28,8 @@ int main() {
 
     //deleting elements
     items.pop_back(); //deletes last element
+    v.erase(v.begin() + 1); //deleting element at index 1
+    v.erase(v.begin(), v.begin()+3); //erases first 3 elements
 
     cout << items.size() << "\n";
     cout << items[2] << "\n";
