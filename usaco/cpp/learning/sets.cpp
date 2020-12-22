@@ -20,5 +20,13 @@ int main() {
     }
     cout << endl;
 
+    //querying for values in set
+    auto it = S.find(-1);
+    if (it == S.end()) {
+        cout << "not present" << endl;;
+    } else {
+        cout << *it << endl;
+    }
+
     return 0;
 }
