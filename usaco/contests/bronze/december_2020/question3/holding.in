@@ -1,0 +1,43 @@
+else if (northtime == eastime) {
+    if (cows[northcow].eat == Integer.MAX_VALUE && cows[eastcow].eat == Integer.MAX_VALUE) {
+        cows[northcow].eat = 1;
+        cows[eastcow].eat = 1;
+    } else {
+        cows[northcow].eat += 1;
+        cows[eastcow].eat += 1;
+    }
+}
+
+
+int coord = 0;
+int coord2 = 0;
+
+if (cows[i].direction == 'E') {
+                if (cows[i].endx != Integer.MIN_VALUE && cows[i].endy != Integer.MIN_VALUE && cows[i].stopper != Integer.MIN_VALUE) {
+                    stopper = cows[i].stopper;
+                    if (cows[stopper].direction == 'E') {
+                        coord = Math.abs(cows[stopper].endx - cows[stopper].x);
+                    } else if (cows[stopper].direction == 'N') {
+                        coord = Math.abs(cows[stopper].endy- cows[stopper].y);
+                    }
+                    coord2 = Math.abs(cows[i].endx - cows[i].x);
+                    if (coord > coord2) {
+                        dist = Math.abs(cows[i].endx - cows[i].x);
+                        cows[i].eat = dist;
+                    }
+                }
+            } else if (cows[i].direction == 'N') {
+                if (cows[i].endx != Integer.MIN_VALUE && cows[i].endy != Integer.MIN_VALUE && cows[i].stopper != Integer.MIN_VALUE) {
+                    stopper = cows[i].stopper;
+                    if (cows[stopper].direction == 'E') {
+                        coord = Math.abs(cows[stopper].endx - cows[stopper].x);
+                    } else if (cows[stopper].direction == 'N') {
+                        coord = Math.abs(cows[stopper].endy - cows[stopper].y);
+                    }
+                    coord2 = Math.abs(cows[i].endy - cows[i].y);
+                    if (coord > coord2) {
+                        dist = Math.abs(cows[i].endy - cows[i].y);
+                        cows[i].eat = dist;
+                    }
+                }
+            }
