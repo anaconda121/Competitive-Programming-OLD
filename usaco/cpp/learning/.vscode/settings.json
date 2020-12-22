@@ -3,6 +3,7 @@
         "vector": "cpp",
         "fstream": "cpp",
         "*.tcc": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "ostream": "cpp"
     }
 }
