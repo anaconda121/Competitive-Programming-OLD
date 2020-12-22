@@ -3,7 +3,8 @@ import java.util.*;
 
 public class billboard2 {    
     public static void main(String[] args) throws IOException {
-        Scanner in = new Scanner(new File("billboard.in"));
+        //Scanner in = new Scanner(new File("billboard.in"));
+        Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(new File("billboard.out"));
         //input
         int bX1 = in.nextInt(); int bY1 = in.nextInt(); // billboard 1
@@ -43,8 +44,8 @@ public class billboard2 {
         int billboard2 = calcArea(b2X1, b2X2, b2Y1, b2Y2);
 
         int visible = billboard1 + billboard2 - (currOverlap);
-        out.println(visible);
-        out.close();
+        System.out.println(visible);
+        //out.close();
 
     }
 
