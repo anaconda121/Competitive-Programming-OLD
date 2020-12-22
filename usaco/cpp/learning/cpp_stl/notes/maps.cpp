@@ -18,6 +18,18 @@ int main() {
         cout << it->first << " => " << it->second << endl;
     }
 
+    //getting size of map
+    cout << A.size() << endl;
+
+    //clearing map
+    A.clear();
+    cout << A.size() << endl;
+
+    //inserting values into map using pairs
+    A.insert(pair<int,int>(1,1)); //inserts are only used for creating key-value pair, not updating
+    A.insert(pair<int,int>(3,1));
+    A.insert(pair<int,int>(1,2));
+
     //mass-adding values into map
     map<char,int> count;
     string x = "tanish tyaagi";
@@ -25,6 +37,5 @@ int main() {
         count[c]++;
     }  
     cout << count['a'] << " " << count['z'] << " " << endl;  
-
     return 0;
 }
