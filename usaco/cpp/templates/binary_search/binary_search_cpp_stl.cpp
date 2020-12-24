@@ -13,7 +13,6 @@ int binary_search(vector<int> &a, int query) {
     return -1;
 }
 
-
 int main() {
     vector<int> a;
     int idx[20];
@@ -25,6 +24,5 @@ int main() {
         idx[i] = binary_search(a, rand() % 20);
         cout << idx[i] << " -- " << a[idx[i]] << endl;
     }
-    
     return 0;
 }
