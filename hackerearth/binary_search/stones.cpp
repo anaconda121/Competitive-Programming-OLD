@@ -4,14 +4,6 @@
 
 using namespace std;
 
-int sum(vector<int>&a, int idx) {
-    int sum = 0;
-    for (int i = 0; i < idx; i++) {
-        sum += a[i];
-    }
-    return sum;
-}
-
 void setIO(string name = "") { // name is nonempty for USACO file I/O
     ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
     // alternatively, cin.tie(0)->sync_with_stdio(0);
@@ -20,24 +12,36 @@ void setIO(string name = "") { // name is nonempty for USACO file I/O
 }
 
 int main() {
-    setIO("bishu");
+    setIO("stones");
     int n;
     cin >> n;
-    vector<int> soldiers (n);
+    vector<int> stones (n);
     for (int i = 0; i < n; i++) {
-        cin >> soldiers[i];
+        int s;
+        cin >> s;
+        stones[i] = s;
+        if (i > 0) {
+            stones[i] += stones[i-1];
+        }
     }
+    sort(begin(stones), end(stones));
+
     int q;
     cin >> q;
-    vector<int> power (q);
-    sort(begin(soldiers), end(soldiers));
     for (int i = 0; i < q; i++) {
-        cin >> power[i];
+        int qcount;
+        cin >> qcount;
         vector<int>::iterator it;
-        it = upper_bound(begin(soldiers), end(soldiers), power[i]);
-        int idx = it - soldiers.begin();
-        int sumPower = sum(soldiers, idx);
-        cout << idx << " " << sumPower << endl;
+        it = lower_bound(begin(stones), end(stones), stones[n-1]-qcount);
+        int idx = it - begin(stones);
+        if (*it == 0) {
+            idx = n-1;
+        }
+        if (idx % 2 == 0) {
+            cout << "A" << endl;
+        } else {
+            cout << "B"<< endl;
+        }
     }
-    return 0; 
+    return 0;
 }
