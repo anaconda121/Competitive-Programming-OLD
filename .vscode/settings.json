@@ -2,6 +2,7 @@
     "files.associations": {
         "xstring": "cpp",
         "vector": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "xiosbase": "cpp"
     }
 }
