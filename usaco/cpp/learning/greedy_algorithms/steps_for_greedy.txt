@@ -1,0 +1,1 @@
+1. choose a certain value that is the most "profitable" (cld be max val, min val, etc)

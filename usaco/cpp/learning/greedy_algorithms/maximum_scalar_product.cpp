@@ -14,6 +14,7 @@ int maximum_scalar_productslow(vector<int> a, vector<int> b) {
     return sum;
 }
 
+//O(n^2)
 int maximum_scalar_product(vector<int> a, vector<int> b) {
     int ans = 0;
     while (a.size()> 0) {
