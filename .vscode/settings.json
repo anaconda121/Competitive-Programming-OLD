@@ -5,6 +5,8 @@
         "xutility": "cpp",
         "xiosbase": "cpp",
         "ostream": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp"
     }
 }
