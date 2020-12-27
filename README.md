@@ -1,4 +1,4 @@
-# Comp-Programming
+# Competitive-Programming
 All my competitive programming solutions
 <br> <br> Includes:
 <br> - Bronze Prep
