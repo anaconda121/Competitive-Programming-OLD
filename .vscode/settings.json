@@ -8,5 +8,6 @@
         "ios": "cpp",
         "utility": "cpp",
         "iostream": "cpp"
-    }
+    },
+    "python.pythonPath": "C:\\Myprograms\\anaconda332\\python.exe"
 }
