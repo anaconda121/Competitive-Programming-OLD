@@ -8,7 +8,13 @@
         "ios": "cpp",
         "utility": "cpp",
         "iostream": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "algorithm": "cpp",
+        "stack": "cpp",
+        "queue": "cpp",
+        "xlocale": "cpp",
+        "iosfwd": "cpp",
+        "fstream": "cpp"
     },
     "python.pythonPath": "C:\\Myprograms\\anaconda332\\python.exe"
 }
