@@ -8,7 +8,6 @@
 
 // cpp by default shows a max pq
 
-
 //time complexities
 // naive removing - o(n)
 // advanced removing w/ hash table = o(log(n))
@@ -31,6 +30,34 @@ void showpq(priority_queue<int> gq)
 }
 
 int main(){
+    priority_queue<int> gquiz;
+    gquiz.push(10);
+    gquiz.push(30);
+    gquiz.push(20);
+    gquiz.push(5);
+    gquiz.push(1);
+    //you can also do emplace instead of push, emplace is better for pq's of bigger data structures
+ 
+    cout << "The priority queue gquiz is : ";
+    showpq(gquiz);
+ 
+    cout << "\ngquiz.size() : " << gquiz.size();
+    cout << "\ngquiz.top() : " << gquiz.top();
+ 
+    cout << "\ngquiz.pop() : ";
+    gquiz.pop();
+    showpq(gquiz);
 
+    priority_queue<int> gquiz2;
+    gquiz2.push(14);
+    gquiz2.push(13);
+    gquiz2.push(12);
+    gquiz2.push(11);
+    gquiz2.push(10);
+    gquiz.swap(gquiz2);
+
+    showpq(gquiz);
+    cout << "\n";
+    showpq(gquiz2);
     return 0;
 }
