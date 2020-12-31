@@ -14,7 +14,6 @@ void setIO(string name) { // name is nonempty for USACO file I/O
     // alternatively, cin.tie(0)->sync_with_stdio(0);
     freopen((name+".in").c_str(), "r", stdin); // see Input & Output
     freopen((name+".out").c_str(), "w", stdout);
-    
 }
 
 int numberRequiredBuses(long long timeInterval){
