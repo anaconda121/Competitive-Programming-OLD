@@ -3,7 +3,7 @@
 #include <vector>
  
 using namespace std;
- 
+
 int main() {
   int n, m, x;
   cin >> n >> m;
@@ -12,6 +12,7 @@ int main() {
     cin >> x;
     h.insert(x);
   }
+
   while (m--) {
     cin >> x;
     auto it = h.lower_bound(x);
