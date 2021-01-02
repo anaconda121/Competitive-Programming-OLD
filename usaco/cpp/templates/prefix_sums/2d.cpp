@@ -3,6 +3,7 @@
 #include <math.h>
 #include <iostream>
 #include <stdio.h>
+#include <cstring>
 
 using namespace std;
 using ll = long long;
@@ -19,7 +20,8 @@ int sumOfSubMatrix(int r, int col, int r2, int col2, int matrix[5][6]) {
 
 int main() {
     int matrix[5][6]= {{0,0,0,0,0,0},{0,1,5,6,11,8}, {0,1,7,11,9,4}, {0,4,6,1,3,2}, {0,7,5,4,2,3}};
-    int prefix[5][6] = {{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}};
+    int prefix[5][6]; //= {{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}};
+    memset(prefix, sizeof(prefix)/sizeof(prefix[0]), 0);
     //getting rows and cols of a matrix
     //cout << matrix.size() << endl; --> rows
     //cout << matrix[1].size() << endl; --> cols
