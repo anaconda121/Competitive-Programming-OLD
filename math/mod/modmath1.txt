@@ -1,0 +1,64 @@
+1. mod congruence
+a and b are said to be cong if a % n = b % n
+then a %n - b%n = 0 and  (a-b)/n evenly
+
+PROOF:
+a = n * k1 + R 
+b = n * k2 + R 
+a and b are both multiples of n with same remainder R b/c they are congruent
+
+a-b = n * k1 + R - n * k2 - R 
+a-b = n(k1-k2)
+(a-b)/n = k1-k2 --> since k1-k2 is an integer, a-b is a multiple of n
+
+an addition of that fact is that a-b = n * k --> k = k1-k2
+a = nk + b, and (nk + b) % n = a % n
+
+E.g. 13 cong. to 41 (mod 7)
+13 = 7 * (-4) + 41
+41 = 7 * (4) + 13
+
+e.g. 13 = 41 (%7), 13 % 7 = 6, 41 % 7 = 6
+
+E.g. (13+35+5) % 7 = 53 % 7 = 4
+     (41 + 3 5 + 5) % 7 = 81 % 7 = 4
+     since 13 and 41 are cong, we can replace them in the equation and it stil will gets the same value
+
+E.g. (13*4) % 7 = (41*4) % 7, b/c 13 and 41 are cong.
+the above 2 examples only work for % 7!! this is because 13 and 41 are cong when modded by 7. 
+ 
+2. mod multiplication
+if a*b=c 
+then a % n * b % n is congruent c % n 
+
+PROOF:
+if a*b=c,
+a = n*k1 + r1
+b = n*k2 + r2
+c = n*k3 + r3
+
+a % n = r1, b % n = r2, c % n = r3
+r1 * r2 = r3 
+
+n*k1 + r1 * n*k2 + r2 = n*k3 + r3
+n*n*k1*k2 + n*k1*r2 + n*k2*r1 + r1*r2 = n*k3*r3
+n*n*k1*k2 + n*k1*r2 + n*k2*r1 - k*k3 = r3 - (r1*r2)
+N * n*k1*k2 + k1*r2 + k2*r1-k3 = r3-(r1*r2)
+n*k1*k2 + k1*r2 + k2*r1-k3  = (r3 - (r1*r2))/N 
+This means that (r3 - (r1*r2)) is evenly divisble by n, so we can rearrange the equation to say r3/n = (r1*r2)/n
+
+E.g. 
+res = a*b 
+res = ((a % n)*(b % n) % n)
+
+E.g. 13 = 3 mod 5, 9 = 4 mod 5
+13 *9 = 117
+13 % 5 * 9 % 5 = 11 7 * 5
+3 * 4 = 2 (mod 5)
+12 = 2 (mod 5)
+
+PROBLEMS:
+1. find the last digit of 2573 * 34268 
+(2573 * 34268) % 10
+2573 % 10 * 34268 % 10 = 3 * 8 = 24
+24 % 10 = 4
