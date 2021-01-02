@@ -15,7 +15,8 @@
         "xlocale": "cpp",
         "iosfwd": "cpp",
         "fstream": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "numeric": "cpp"
     },
     "python.pythonPath": "C:\\Myprograms\\anaconda332\\python.exe"
 }
