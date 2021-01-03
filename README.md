@@ -1,5 +1,5 @@
 # Competitive-Programming
-All my competitive programming solutions
+All my notes and solutions for competitive programming (USACO, Codeforces, LeetCode, CSES, Hackerrank/Hackerearth\)
 <br> <br> Includes:
 <br> - Bronze Prep
 <br> - CPP notes (I learned cpp from scratch for USACO)
