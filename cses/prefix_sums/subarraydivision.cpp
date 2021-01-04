@@ -16,7 +16,7 @@ int main(){
     for (int i = 0; i < len; i++) {
         long long a;
         cin >> a;
-        sum = ((sum+a)%len+len)%len;
+        sum = ((sum+a)%len+len)%len; //takes care of negative nums
         rem = sum % len;
         count += occurences[sum];
         occurences[sum]++;

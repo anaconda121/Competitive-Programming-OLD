@@ -1,0 +1,24 @@
+1. how to find if a number is prime or not
+O(N) approach
+    * if number == 1, then return false
+    * otherwise, create a for loop from i = 2 to number, and see if number % i == 0 
+    * if it is, then return false because the number is divisible by another number
+    * otherwise, return true outside of the loop 
+
+O(sqrt(n)) approach
+    * know that each number (if it has factors) as comprised of a pair (a,b) where a*b=number 
+    *a/b has to be > sqrt(n) and a/b has to be < sqrt(n)
+
+    PROOF:
+    3 cases:
+        1. a and b > sqrt(n)
+        2. a and b < sqrt(n)
+        3. a being greater than sqrt(n) and b < sqrt(n) or another way around
+
+        1 and 2 can be disproved by contradiction:
+            * 1. a*b has to be > n so its not possible
+            * 2. a*b has to be < n so not possible 
+        
+        Therefore by elimination, case 3 is the only valid one.
+    
+    so instead of looping for 2 --> n, we can loop form 2 to point where i*i > n 
