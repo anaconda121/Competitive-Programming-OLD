@@ -25,7 +25,7 @@ public class div7 {
 			last[currPref] = i; //end of streak
         }
         // first arr = [0,2,3,1,intmax,intmax,7]
-        // last arr = [0,4,3,6,0,0,7]
+        // last arr = [0,4,3,6,0,0,7]                                           
         // 6 - 1 = 5, which is ans
 		int ret = 0;
 		for(int i = 0; i < 7; i++) {
