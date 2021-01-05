@@ -1,0 +1,9 @@
+Lets say Q = 10^9
+Find the number of prime numbers from 0-10^9. 
+O(N*sqrt(N)) is too slow, too many calculations
+
+Instead we can use the sieve. 
+Sieve works like this:
+start from i = 2 and goes until i*i <= Q (based off logic in finding_primes.txt)
+mark i = 0 and i = 1 as composite & everything else as prime.
+if i = prime, then mark all the multiples of that number as composite
