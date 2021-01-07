@@ -1,0 +1,30 @@
+Basic Properties:
+(A+B) % p = (A%p + b%p) % p 
+(A*B) % p = (A %p * B %p) %p 
+
+However, this property does not hold for division.
+E.g. (A / B) % P != A % P / B % P 
+
+This is where mod multiplicative inverse comes in
+We can turn (A/B) % P into (A * mod_inv) % P and use the multiplication property
+
+Finding mod multiplicative inverse:
+n * x = 1 % p
+
+if (n % x == 0), n has no multiplicative inverse
+
+mod inverse of n exists if GCD(n, p) = 1
+
+E.g. Simplify (6/2)%5 
+2 * x = 1 % 5
+x = 3
+
+now, ans = (6 % 5 * 3 % 5) % 5 = 3
+
+Coding program to find mod inverse:
+
+1. Fermat's Little Thm.
+
+a^m-1 = 1  (mod m)
+a^m-2 = a^-1 (mod m)
+Therefore, a^m-2 % m = multiplicative inverse

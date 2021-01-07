@@ -15,9 +15,9 @@ void sieve() {
     }
     nums[0] = nums[1] = 0;
     for (int i = 2; i <= maxN; i++) {
-        if (nums[i]) {
+        if (nums[i]==0) {
             for (int j = i*i; j <= maxN; j+=i) {
-                nums[j] = 0;
+                nums[j] = 1;
             }
         }
     }
