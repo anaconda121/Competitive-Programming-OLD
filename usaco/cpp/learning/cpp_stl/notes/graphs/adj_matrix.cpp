@@ -16,6 +16,7 @@ Disadvantages
 The memory allocated is always an N * NN∗N matrix, even in the case of sparse graphs, i.e. the number of edges is small.
 For a given node finding all its neighbours, i.e. other nodes that share an edge with it, requires checking an entire row of elements in the matrix.
 */
+
 void addEdge(int graph[N][N], int u, int v){
     //1. assuming that edge is undirected (bidirectional)
     //2. assuming that values in tree go from 0 - (n-1)
