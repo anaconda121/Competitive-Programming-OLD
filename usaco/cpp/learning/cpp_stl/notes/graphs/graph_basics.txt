@@ -1,0 +1,64 @@
+_________TERMINOLOGY___________
+A graph consists of nodes and edges. In this book, the variable n denotes the
+number of nodes in a graph, and the variable m denotes the number of edges
+
+E.g. 1 <--> 2 <--> 5
+     /\
+     | |
+     |  |
+     v    v
+     3 <--> 4
+the <--> mean that the graph can be traversed from node 3 - node 1 / node 1 - node 3
+this graph has 5 nodes and 4 edges
+
+The nodes are numbered using integers 1,2,...,n
+
+A path leads from node a to node b through edges of the graph. The length
+of a path is the number of edges in it. 
+
+A path is a cycle if the first and last node is the same
+A path is simple if each node appears at most once in the path.
+
+_________________CONNECTIVITY_______________
+A graph is connected if there is a path between any two nodes
+The connected parts of a graph are called its components. 
+
+A tree is a connected graph that consists of n nodes and n−1 edges. There is a unique path between any two nodes of a tree
+
+________EDGE DIRECTIONS______________________
+A graph is directed if the edges can be traversed in one direction only
+(LOOK AT directed_graph.png for example graph)
+
+In a directed graph, the indegree of a node is the number of edges that end
+at the node, and the outdegree of a node is the number of edges that start at
+the node. 
+
+in the directed_graph.png, the value of the indegree for node 2 is 1, and the outdegree is 2.
+
+______EDGE WEIGHTS_____
+In a weighted graph, each edge is assigned a weight. The weights are often interpreted as edge lengths
+(LOOK at weighted_graph.png for example)
+
+_________NEIGHBORS AND DEGREES_________
+Two nodes are neighbors or adjacent if there is an edge between them. The
+degree of a node is the number of its neighbors.
+
+The sum of degrees in a graph is always 2m, where m is the number of edges, because each edge increases the degree of exactly two nodes by one. 
+For this reason, the sum of degrees is always even
+
+A graph is regular if the degree of every node is a constant d. A graph is complete 
+if the degree of every node is n−1, i.e., the graph contains all possible edges between the nodes
+
+_______COLORINGS______________
+In a coloring of a graph, each node is assigned a color so that no adjacent nodes
+have the same color.
+
+A graph is bipartite if it is possible to color it using two colors. It turns out
+that a graph is bipartite exactly when it does not contain a cycle with an odd
+number of edges
+
+(LOOk at colorings.png) for reference
+
+__MISC__
+in (weird_graph.png), the loops between nodes 2 and 3 mean that they are 2 undirected edges between nodes 2 and 3
+that feature adds more ways to traverse the graph
