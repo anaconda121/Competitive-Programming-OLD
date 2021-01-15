@@ -1,0 +1,4 @@
+algo for traversing a graph (exploring all possible connected elements in a particular graph)
+starts at a root node (parameter to function)
+for there, it will choose an element from the root node's adj_list
+this executes recursively, if a particular node has already been visited, the algo backtracks to a node that still adj_list elements that have not been explored

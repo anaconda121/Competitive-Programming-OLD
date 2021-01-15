@@ -22,6 +22,9 @@ A path is simple if each node appears at most once in the path.
 _________________CONNECTIVITY_______________
 A graph is connected if there is a path between any two nodes
 The connected parts of a graph are called its components. 
+any node is reachable from any other node by traversing one or more edges.
+
+(LOOK at connected_component.png), nodes 4 and 5 form a connected connected_component
 
 A tree is a connected graph that consists of n nodes and n−1 edges. There is a unique path between any two nodes of a tree
 
