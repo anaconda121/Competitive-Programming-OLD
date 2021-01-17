@@ -11,7 +11,8 @@ vector<int> cats;
 vector<int> adj[100005];
 bool visited[100005];
 int res = 0;
-int prevNode = 1;
+int prevNode = 0;
+
 
 void setIO(string name, bool includeout=false) { // name is nonempty for USACO file I/O
     ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
@@ -23,19 +24,23 @@ void setIO(string name, bool includeout=false) { // name is nonempty for USACO f
 }
 
 void dfs(int start, int count) {
-    if (cats[start-1] == 1 && cats[prevNode-1] == 1) {
+    if (cats[prevNode] == 1 && cats[start] == 1)  {
         count++;
         //cout << count << endl;
     } else {
-        count = 0;
+        if (cats[start] == 1) {
+            count = 1;
+        } else {
+            count = 0;
+        }
     }
-    if (visited[start] == true || count > catCount) {
+
+    if (count > catCount) {
         return;
     }
     visited[start] = true;
-    if (adj[start].size() == 1 && start != 1) {
+    if (adj[start].size() == 1 && start != 0) {
         res++;
-    
     } else {
         for (auto next : adj[start]) {
             if (!visited[next]) {
@@ -58,10 +63,11 @@ int main() {
     for (int i = 0; i < n-1; i++) {
         int a, b;
         cin >> a >> b;
+        a--; b--;
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
-    dfs(1, 0);
+    dfs(0, 0);
 
     cout << res << endl;
 
