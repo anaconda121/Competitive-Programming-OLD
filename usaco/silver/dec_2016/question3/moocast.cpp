@@ -1,3 +1,5 @@
+//http://www.usaco.org/index.php?page=viewproblem2&cpid=668
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -10,6 +12,18 @@ vector<int> adj[205];
 bool visited[205];
 pair<int,int> coords[205];
 int currStreak = 0;
+
+
+/*LOGIC
+1. input
+2. loop over all possible pairs and see if distances meet power req
+3. use those dists to create adj lists
+4. for loop with dfs to check max dist from every cow
+5. in dfs, if there is any possible cow to visit, increment streak
+6. check to see if streak is better than curr max streak
+7. return maxe + 1 b/c including starting cow 
+*/
+
 
 void setIO(string name, bool includeout=false) { // name is nonempty for USACO file I/O
     ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
