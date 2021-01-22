@@ -1,7 +1,8 @@
 # Competitive-Programming
 All my notes and solutions for competitive programming (USACO, Codeforces, LeetCode, CSES, Hackerrank/Hackerearth)
 <br> <br> Includes:
-- Bronze Prep
+- Bronze Prep (pretty much every problem for last 5 years of bronze)
+  - Can be found
 - CPP notes (I learned cpp from scratch for USACO)
 - CSES Solutions (currently for sorting and searching, graphs)
 - Solutions for CP cousera course (https://www.coursera.org/learn/competitive-programming-core-skills/home/welcome)
