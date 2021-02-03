@@ -4,6 +4,15 @@ using namespace std;
 
 #define maxn 100005
 
+/*LOGIC:
+1. calc strokes need from 0 - a and from  n - b and sum those together for answer
+2. scan the input from left to right while maintaining a stack of "active brush strokes". 
+    Every time we see a higher color than the one on top of the stack, we push it onto the stack (so the stack will contain ascending colors from bottom to top). 
+    Every time we see a color c, we pop from the stack every color larger than c, since those brush strokes need to be ended for color c to be visible. 
+    The aggregate number of pushes onto the stack tells us the number of brush strokes required for each prefix.
+3. need to reverse string for stroke calc from suffix count
+*/
+
 string fence;
 int before[maxn], after[maxn];
 int n, q;
