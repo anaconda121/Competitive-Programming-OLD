@@ -13,6 +13,23 @@ void setIO(string name, bool includeout=false) { // name is nonempty for USACO f
     }
 }
 
+/* LOGIC
+pattern - for any row or colums, the rows must alternate cow then no-cow
+E.g. CCCC
+     ....
+     CCCC
+     
+     OR
+     C.C.C
+     .C.C.C
+     C.C.C
+
+     OR 
+     C.C
+     C.C
+     C.C
+*/
+
 int n;
 long long matrix[maxn][maxn];
 long long sums[2];
