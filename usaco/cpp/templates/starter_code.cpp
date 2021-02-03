@@ -1,8 +1,5 @@
-#include <algorithm>
-#include <vector>
-#include <math.h>
-#include <iostream>
-#include <stdio.h>
+#include <bits/stdc++.h>
+
 
 using namespace std;
 
