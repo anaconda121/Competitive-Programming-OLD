@@ -13,3 +13,5 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
   - can be found in math
 - Silver Prep
   - can be found in usaco/silver
+- Contest Solutions and Explainations
+  - can be found in usaco/contests
