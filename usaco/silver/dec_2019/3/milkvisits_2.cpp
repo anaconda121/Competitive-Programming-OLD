@@ -4,46 +4,64 @@ using namespace std;
 
 #define maxn 100005
 
-int n, m;
-string pref;
-bool visited[maxn];
-vector<pair<int, char>> adj[maxn];
-char type;
+int n, m, cc;
+int components[maxn];
+string s;
+char pref[maxn];
+vector<int> adj[maxn];
 
-void dfs(int start, char t) {
-    if (visited[start] == true) {
+void setIO(string name, bool includeout=false) { // name is nonempty for USACO file I/O
+    ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
+    // alternatively, cin.tie(0)->sync_with_stdio(0);
+    freopen((name+".in").c_str(), "r", stdin); // see Input & Output
+    if (includeout) {
+        freopen((name+".out").c_str(), "w", stdout);
+    }
+}
+
+void dfs(int start) {
+    if (components[start]) {
         return;
     }
-    visited[start] = true;
+    components[start] = cc; //assign component #
     for (auto next : adj[start]) {
-        if (!visited[next.first] && adj[start][next.second] == t) {
-            
+        if (pref[start] == pref[next]) {
             dfs(next);
         }
     }
 }
 
 int main() {
-    cin >> n >> m >> pref;
+    setIO("milkvisits", true);
+    string ans = "";
+    cin >> n >> m;
+    cin >> s;
+    for (int i = 1; i < n+1; i++) {
+        pref[i] = s[i-1];
+    }
     for (int i = 0; i < n-1; i++) {
         int a, b;
         cin >> a >> b;
-        a--; b--;
-        adj[a].push_back(make_pair(b, pref[b]));
-        adj[b].push_back(make_pair(a, pref[a]));
+        adj[a].push_back(b);
+        adj[b].push_back(a);
     }
-    type = 'H';
-    for (int i = 0; i < n; i++) {
-        dfs(i, type)
+    for (int i = 1; i < n+1; i++) if (!components[i]) {
+        //add new component
+        cc++;
+        dfs(i);
     }
-    type = 'G';
-    for (int i = 0; i < n; i++) {
-        dfs(i, type)
-    }
+    
     for (int i = 0; i < m; i++) {
         int a, b;
         char c;
         cin >> a >> b >> c;
+        if ((components[a] == components[b] && pref[a] == c) || components[a] != components[b]) {
+            //cout << pref[a] << " " << pref[b] << " " << c << endl;
+            ans += '1';
+        } else {
+            ans += '0';
+        }
     }
+    cout << ans << endl;
     return 0;
 }
