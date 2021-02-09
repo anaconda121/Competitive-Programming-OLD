@@ -95,12 +95,12 @@ int main() {
 
         int finalnum = currCowsVisited.size();
         for (int i : locinthisseq) {
-             finalCounts[i] = finalnum;
+            finalCounts[i] = finalnum;
         }
     }
 
     for (int i = 0; i < n; i++) {
-            cout << finalCounts[i] << endl;
+        cout << finalCounts[i] << endl;
     }
 
 
