@@ -6,6 +6,7 @@ a pattern repeats every 15 numbers
 so for a number n, whichever number in the first 8 it is a multiple off we need to find that
 and then we can just * 15 by n-index i / 8 for ans
 */
+
 #include <bits/stdc++.h>
 
 using namespace std;
