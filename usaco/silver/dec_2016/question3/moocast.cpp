@@ -48,7 +48,7 @@ void dfs(int start) {
 }
 
 int main() {
-    setIO("moocast", true);
+    setIO("moocast");
     cin >> n;
     for (int i = 0; i < n; i++) {
         cin >> coords[i].first >> coords[i].second >> p[i];
