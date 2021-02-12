@@ -24,6 +24,7 @@ bool cmp (int a, int b){
 int main(){
     setIO("berries", true);
     cin >> n >> k;
+    
     for (int i = 0; i < n; i++) {
         int a;
         cin >> a;
@@ -35,7 +36,7 @@ int main(){
     for (int i = k; i <= berries.size(); i++) {
         berries.erase(berries.begin() + i);
     }
-    
+
     for (int i = (k/2); i < k; i++) {
         ans[0] += berries[i];
     }
@@ -48,15 +49,18 @@ int main(){
         berries[0] -= sub;
         berries.push_back(sub);
     }
-
+    
     sort(berries.begin(), berries.end(), cmp);
-    for (int i = k; i <= berries.size(); i++) {
+    for (int i = k-1; i < berries.size(); i++) {
         berries.erase(berries.begin() + i);
     }
-    
+    for (auto &x : berries) {
+        cout << x << endl;
+    }
     for (int i = (k/2); i < k; i++) {
         ans[1] += berries[i];
     }
+    cout << ans[0] << " , " << ans[1] << endl;
     cout << max(ans[0], ans[1]) << endl;
     return 0;
 }
