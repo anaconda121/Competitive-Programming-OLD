@@ -14,4 +14,7 @@ Cow 2's second priority is #2, so it will check out Cow 3
 
 1 2 3 4
 1 2 _ _
+
+Loop over array, if val = 0, then set it to arr[i-1]
+Print array out in reverse
 */
