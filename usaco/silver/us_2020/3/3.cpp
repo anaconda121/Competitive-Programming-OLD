@@ -31,9 +31,6 @@ int main() {
         lowerbounds.erase(itr--);
       }
     }
-    for (int x : lowerbounds) {
-        fout << x << " , ";
-    }
     fout << endl;
   }
   fout << lowerbounds.size() << endl;
