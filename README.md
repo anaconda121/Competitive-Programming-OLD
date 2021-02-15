@@ -1,5 +1,10 @@
 # Competitive-Programming
 All my notes and solutions for competitive programming (USACO, Codeforces, LeetCode, CSES, Hackerrank/Hackerearth)
+My problem solutions include:
+- Link to Problem
+- Explaination of Logic
+- Comments to make code more readable
+- Efficient Solution (most of the time hopefully :pray)
 <br> <br> Includes:
 - Bronze Prep (pretty much every problem for last 5 years of bronze)
   - Can be found in usaco/bronze
