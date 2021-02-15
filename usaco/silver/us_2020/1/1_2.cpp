@@ -1,3 +1,9 @@
+//http://www.usaco.org/index.php?page=viewproblem2&cpid=1038
+
+/*LOGIC
+binary search on value of d (pretty much binary search for answer module on usaco.guide)
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
