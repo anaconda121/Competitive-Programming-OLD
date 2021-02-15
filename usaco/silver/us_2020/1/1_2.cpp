@@ -19,16 +19,23 @@ void setIO(string name, bool includeout=false) { // name is nonempty for USACO f
 bool check(long long dist) {
     long long currPoint = intervals[0].first;
     long long currInterval = 0;
-    for (int i = 1; i < n; i++) {
-        currPoint += dist;
-        while (currInterval < m && currPoint > intervals[currInterval].second) {
+    long long placed = 0;
+    while (placed < n) {
+        if (intervals[currInterval].first <= currPoint && intervals[currInterval].second >= currPoint) {
+            //placed another cow down
+            placed++;
+            currPoint += dist;
+        } else {
+            //moving onto next grass patch
             currInterval++;
+            if (intervals[currInterval].first >= currPoint) {
+                //adjusting currpoint so it can be in correct interval (if needed)
+                currPoint = intervals[currInterval].first;
+            }
         }
-        if (currInterval == m) {
+        if (currInterval >= m){
+            //placed too many cows down
             return false;
-        }
-        if (intervals[currInterval].first > currPoint) {
-            currPoint = intervals[currInterval].first;
         }
     }
     return true;
@@ -51,6 +58,5 @@ int main() {
         }
     }
     cout << lo << endl;
-
     return 0;
 }
