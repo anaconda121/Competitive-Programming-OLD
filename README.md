@@ -1,5 +1,5 @@
 # Competitive-Programming
-All my notes and solutions for competitive programming (USACO, Codeforces, LeetCode, CSES, Hackerrank/Hackerearth)
+All my notes and solutions for competitive programming (USACO, Codeforces, LeetCode, CSES, Hackerrank/Hackerearth) <br>
 My problem solutions include:
 - Link to Problem
 - Explaination of Logic
