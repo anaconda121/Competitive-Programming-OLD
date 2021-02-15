@@ -35,7 +35,7 @@ bool check(long long dist) {
 }
 
 int main() {
-    setIO("socdist");
+    setIO("socdist", true);
     cin >> n >> m;
     for (int i = 0; i < m; i++) {
         cin >> intervals[i].first >> intervals[i].second;
@@ -51,5 +51,6 @@ int main() {
         }
     }
     cout << lo << endl;
+
     return 0;
 }
