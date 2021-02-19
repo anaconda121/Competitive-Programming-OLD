@@ -24,8 +24,8 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
   - can be found in usaco/contests
 
 <br> <br> Timeline and Progress
-- Contest Solutions and Explainations
-  - can be found in usaco/contests
- - Passed USACO Bronze (1000)
+- Dec 2020:
+  - Started CP for real
+  - Passed USACO Bronze (1000)
 - Jan 2021:
- - 733 on USACO Silver
+  - 733 on USACO Silver
