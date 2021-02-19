@@ -1,3 +1,22 @@
+//http://www.usaco.org/index.php?page=viewproblem2&cpid=1062
+
+/*LOGIC
+  1
+ / \
+ 2  3
+/    \ 
+4     5
+      /
+	  6
+
+We start at root node. 
+
+Need to make enough cows so that they can spead to parent of curr_node, and then we will go to each parent and repeat that process until the whole farm is infected.
+
+Instead of visited arr, we can keep track of parent for curr_node and make sure next node we visit is not the parent node. 
+
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -21,11 +40,14 @@ int dfs(int start, int parent) {
     
 	int cows = adj[start].size();
     if (parent == -1) { 
+		//adjacency_list of root node + 1 = total # of cows that need to be there when cloning is finished
 		cows++;
 	}
 
     int currCows = 1;
     int days = 0;
+
+	//cloning cows and seeing how many days it will take
     while (currCows < cows) {
         days++;
         currCows *= 2;
@@ -35,14 +57,14 @@ int dfs(int start, int parent) {
 
     for (auto next : adj[start]) {
         if (next != parent) {
-            ans += dfs(next, start) + 1;
+            ans += dfs(next, start) + 1; //doing +1 because takes 1 day for the sick cow to travel to next node, so need to factor that in to ans
         }
     }
 	return ans;
 }
 
 int main() {
-    //setIO("1");
+    setIO("1");
 	cin >> n;
 	for (int i = 0; i < n-1;i++) {
 		int a,b;
