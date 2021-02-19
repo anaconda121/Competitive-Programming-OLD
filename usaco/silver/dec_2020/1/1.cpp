@@ -18,26 +18,26 @@ void setIO(string name, bool includeout=false) { // name is nonempty for USACO f
 
 int dfs(int start, int parent) {
 	int ans = 0;
+    
+	int cows = adj[start].size();
+    if (parent == -1) { 
+		cows++;
+	}
 
-
-    int cows = adj[start].size();
-    if (parent == -1) cows++;
     int currCows = 1;
     int days = 0;
     while (currCows < cows) {
         days++;
         currCows *= 2;
     }
+
     ans += days;
 
     for (auto next : adj[start]) {
         if (next != parent) {
-            ans += dfs(next, start)+1;
+            ans += dfs(next, start) + 1;
         }
     }
-	
-
-	
 	return ans;
 }
 
@@ -47,11 +47,11 @@ int main() {
 	for (int i = 0; i < n-1;i++) {
 		int a,b;
 		cin >> a >> b;
-		a--; b--;
+		//a--; b--;
 		adj[a].push_back(b);
 		adj[b].push_back(a);
 	}
 
-	cout << dfs(1,-1)-1 << endl;
+	cout << dfs(1,-1) << endl;
     return 0;
 }
