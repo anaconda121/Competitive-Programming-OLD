@@ -1,7 +1,15 @@
 #include <bits/stdc++.h>
 
-
 using namespace std;
+
+#define ll = long long;
+#define vi = vector<int>;
+#define pi = pair<int,int>;
+#define sz(x) (int)(x).size()
+#define pb push_back
+#define all(x) begin(x), end(x)
+#define f first
+#define s second
 
 void setIO(string name, bool includeout=false) { // name is nonempty for USACO file I/O
     ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
