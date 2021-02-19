@@ -12,3 +12,8 @@ Too many macros:
   - https://usaco.guide/solutions/usaco-940?lang=cpp 
   - https://usaco.guide/solutions/usaco-965?lang=cpp (rly too many!!)
   - https://usaco.guide/solutions/usaco-1013?lang=cpp (rly too many!!)
+
+- Silver 
+  - https://usaco.guide/solutions/cses-1661?lang=cpp (rly too many!!)
+  - https://usaco.guide/solutions/cses-1662?lang=cpp (rly too many!!)
+  - https://usaco.guide/solutions/cses-1619?lang=cpp (Implementation 2)
