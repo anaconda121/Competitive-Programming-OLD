@@ -47,11 +47,11 @@ int main() {
 	for (int i = 0; i < n-1;i++) {
 		int a,b;
 		cin >> a >> b;
-		//a--; b--;
+		a--; b--;
 		adj[a].push_back(b);
 		adj[b].push_back(a);
 	}
 
-	cout << dfs(1,-1) << endl;
+	cout << dfs(0,-1) << endl;
     return 0;
 }
