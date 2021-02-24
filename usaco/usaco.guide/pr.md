@@ -1,1 +1,1 @@
-1. explaination for loan repayment (need to do)
+1. explanation for loan repayment (need to do)
