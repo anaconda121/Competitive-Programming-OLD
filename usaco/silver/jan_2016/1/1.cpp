@@ -1,3 +1,8 @@
+//http://www.usaco.org/index.php?page=viewproblem2&cpid=594
+
+/* LOGIC 
+http://www.usaco.org/current/data/sol_angry_silver_jan16.html*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
