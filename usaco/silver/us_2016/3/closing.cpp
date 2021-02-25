@@ -1,15 +1,13 @@
-#include <algorithm>
-#include <vector>
-#include <math.h>
-#include <iostream>
-#include <cstring>
+#include <bits/stdc++.h>
 
 using namespace std;
 
+#define maxn 3005
+
 int barns, paths;
-bool visited[3002];
-vector<int> adj[3002]; //adjacency list
-bool deleted[3002];
+bool visited[3005];
+vector<int> adj[3005]; //adjacency list
+bool deleted[3005];
 
 /*LOGIC
 1. check if fully connected for first part (good)
