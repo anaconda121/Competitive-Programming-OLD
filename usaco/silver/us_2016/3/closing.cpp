@@ -39,7 +39,7 @@ void dfs(int start) {
     }
 }
 
-int countComponents(int reduce){
+int countComponents(){
     int count = 0;
     for (int i = 0; i < barns; i++) {
         //cout << visited[i] << endl;
@@ -62,7 +62,7 @@ int main(){
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
-    int ans = countComponents(0);
+    int ans = countComponents();
     //cout << ans << endl;
     if (ans == 1) {
         cout << "YES" << endl;
@@ -76,14 +76,13 @@ int main(){
         }
         cout << "\n";
     }*/
-    int sub = 0;
     for (int i = 0; i < barns-1; i++) {
         int b;
         cin >> b; b--;
         //adj[b-1].clear();
         deleted[b] = true;
-        int componets = countComponents(sub++);
-        if (componets == 1) {
+        int cc = countComponents();
+        if (cc == 1) {
             cout << "YES" << endl;
             //cout << "YES" << " " << componets << endl;
         } else {
