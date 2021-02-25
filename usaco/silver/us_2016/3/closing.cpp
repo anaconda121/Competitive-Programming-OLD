@@ -33,23 +33,19 @@ void dfs(int start) {
     if (visited[start] == true) return;
     visited[start] = true;
     for (auto next : adj[start]) {
-        if (deleted[next-1] == false) {
-            if (!visited[next]) {
-                dfs(next);
-            }
+        if (!visited[next] && !deleted[next]) {
+            dfs(next);
         }
     }
 }
 
 int countComponents(int reduce){
     int count = 0;
-    for (int i = 1; i <= barns-reduce; i++) {
+    for (int i = 0; i < barns; i++) {
         //cout << visited[i] << endl;
-        if (deleted[i] == false) {
-            if (visited[i] == false){
-                count++;
-                dfs(i);
-            }
+        if(!visited[i] && !deleted[i]) {
+            count++;
+            dfs(i);
         }
     }
     memset(visited, false, sizeof(visited));
@@ -57,15 +53,17 @@ int countComponents(int reduce){
 }
 
 int main(){
-    setIO("closing");
+    setIO("closing", true);
     cin >> barns >> paths;
     for (int i = 0; i < paths; i++) {
         int a, b;
-        cin >> a >> b;
+        cin >> a >> b; 
+        a--; b--;
         adj[a].push_back(b);
         adj[b].push_back(a);
     }
     int ans = countComponents(0);
+    //cout << ans << endl;
     if (ans == 1) {
         cout << "YES" << endl;
     }
@@ -78,16 +76,19 @@ int main(){
         }
         cout << "\n";
     }*/
-    int sub = 1;
+    int sub = 0;
     for (int i = 0; i < barns-1; i++) {
         int b;
-        cin >> b;
-        adj[b-1].clear();
+        cin >> b; b--;
+        //adj[b-1].clear();
+        deleted[b] = true;
         int componets = countComponents(sub++);
         if (componets == 1) {
-            cout << "YES" << " " << componets << endl;
+            cout << "YES" << endl;
+            //cout << "YES" << " " << componets << endl;
         } else {
-            cout << "NO" << " " << componets << endl;
+            cout << "NO" << endl;
+            //cout << "NO" << " " << componets << endl;
         }
     }
     return 0;
