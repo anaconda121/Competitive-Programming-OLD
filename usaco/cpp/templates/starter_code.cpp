@@ -2,12 +2,10 @@
 
 using namespace std;
 
-#define ll = long long;
-#define vi = vector<int>;
-#define pi = pair<int,int>;
-#define sz(x) (int)(x).size()
+#define ll long long
+#define vi vector<int>
+#define pi pair<int,int>
 #define pb push_back
-#define all(x) begin(x), end(x)
 #define f first
 #define s second
 
