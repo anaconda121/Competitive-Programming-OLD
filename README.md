@@ -8,8 +8,9 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
 - Efficient Solution (most of the time hopefully :pray)
 
 <br> <br> Includes:
-- Bronze Prep (pretty much every problem for last 5 years of bronze)
+- Bronze Prep
   - Can be found in usaco/bronze
+  - Java solutions for most of the bronze problems in last 5 years
 - CPP notes (I learned cpp from scratch for USACO)
    - can be found in usaco/cpp
 - CSES Solutions (currently for sorting and searching, graphs)
@@ -20,6 +21,7 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
   - can be found in math
 - Silver Prep
   - can be found in usaco/silver
+  - C++ solutions 
 - Contest Solutions and Explainations
   - can be found in usaco/contests
 
