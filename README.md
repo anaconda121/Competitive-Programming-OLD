@@ -5,7 +5,7 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
 - Link to Problem
 - Explaination of Logic
 - Comments to make code more readable
-- Efficient Solution (most of the time hopefully :pray)
+- Efficient Solution (most of the time hopefully :pray:)
 
 <br> <br> Includes:
 - Bronze Prep
