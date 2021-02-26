@@ -31,3 +31,4 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
   - Passed USACO Bronze (1000)
 - Jan 2021:
   - 733 on USACO Silver
+  - Became an official contributor for usaco.guide
