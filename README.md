@@ -32,5 +32,5 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
 - Jan 2021:
   - 733 on USACO Silver
 - Feb 2021
-  - Passed USACO Silver (1000)
   - Became an official contributor for usaco.guide
+  - Passed USACO Silver (1000)
