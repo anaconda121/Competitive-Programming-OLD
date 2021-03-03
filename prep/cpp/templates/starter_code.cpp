@@ -3,8 +3,6 @@
 using namespace std;
 
 #define ll long long
-#define vi vector<int>
-#define pi pair<int,int>
 #define pb push_back
 #define f first
 #define s second
