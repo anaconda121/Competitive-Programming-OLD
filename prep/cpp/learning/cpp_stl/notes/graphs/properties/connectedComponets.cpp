@@ -3,6 +3,8 @@
 using namespace std;
 
 #define maxn 1005 //placeholder value, depends on problem statement
+#define pb push_back
+
 vector<int> adj[maxn];
 int n;
 
