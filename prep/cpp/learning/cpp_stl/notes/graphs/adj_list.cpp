@@ -27,6 +27,7 @@ Implementing them is slightly more difficult than an adjacency matrix. Even so, 
 class Graph {
     int N; //num of edges
     vector<int> *adj; //adjacency list
+    vector<pair<int,int>> *adj_weighted; //weighted adjacency list
 
     public:
         Graph(int N) {
@@ -39,6 +40,11 @@ class Graph {
             //2. assuming that values in tree go from 0 - (n-1)
             adj[x].push_back(y); //y is adj to x
             adj[y].push_back(x); //x is adj to y
+        }
+
+        void addWeightedEdge(int x, int y, int z) {
+            adj[x].push_back({y, z});
+            adj[y].push_back({x, z}); 
         }
 
         void printAdjList() {
