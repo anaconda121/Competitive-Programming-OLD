@@ -1,7 +1,4 @@
-#include <algorithm>
-#include <vector>
-#include <math.h>
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -33,6 +30,12 @@ void dfs(int start) {
 }
 
 int main() {
-
+    cin >> N;
+    for (int i = 0; i < N; i++) {
+        int a, b;
+        cin >> a >> b;
+        a--; b--;
+        addEdge(a,b);
+    }
     return 0;
 }

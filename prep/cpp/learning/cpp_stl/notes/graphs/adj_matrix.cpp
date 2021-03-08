@@ -1,6 +1,4 @@
-#include <algorithm>
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 #define N 4 // num nodes in graph
