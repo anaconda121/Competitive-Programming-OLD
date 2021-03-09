@@ -1,3 +1,8 @@
+//https://codeforces.com/contest/862/problem/B
+// max num of edges in bipartite graph: zeroCount * oneCount
+// currentEdges = n-1
+// (zeroCount * oneCount ) - (n-1) = ANS
+
 #include <bits/stdc++.h>
  
 using namespace std;

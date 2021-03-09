@@ -1,3 +1,6 @@
+//https://cses.fi/problemset/task/1668
+//coloring, store in ans arr what color number
+
 #include <bits/stdc++.h>
  
 using namespace std;
