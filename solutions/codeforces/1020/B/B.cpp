@@ -30,7 +30,6 @@ int main(){
         adjList[i] = a;
     }
     memset(visited, false, sizeof(visited));
-
     for (int i = 0; i < n; i++) {
         memset(visited, false, sizeof(visited));
         dfs(i);
