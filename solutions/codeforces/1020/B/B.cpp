@@ -1,3 +1,6 @@
+//https://codeforces.com/contest/1020/problem/B
+//this is to ez for any logic lol
+
 #include <bits/stdc++.h>
 
 using namespace std;
