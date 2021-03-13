@@ -1,11 +1,11 @@
 def clockwise(d1, d2):
-	if (d1=='N' and d2=='E'):
+	if (d1 == 'N' and d2 == 'E'):
 		return True
-	if (d1=='E' and d2=='S'):
+	if (d1 == 'E' and d2 == 'S'):
 		return True
-	if (d1=='S' and d2=='W'):
+	if (d1 == 'S' and d2 == 'W'):
 		return True
-	if (d1=='W' and d2=='N'):
+	if (d1 == 'W' and d2 == 'N'):
 		return True
 	return False
 
