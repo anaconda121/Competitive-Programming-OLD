@@ -28,7 +28,7 @@ public class shuffle {
 		BufferedReader stdin = new BufferedReader(new FileReader("shuffle.in"));
 		StringTokenizer tok = new StringTokenizer(stdin.readLine());
 		n = Integer.parseInt(tok.nextToken());
-		line = new StringTokenizer(stdin.readLine());
+		StringTokenizer line = new StringTokenizer(stdin.readLine());
 		parent = new int[n];
 		for (int i=0; i<n; i++)
 			parent[i] = Integer.parseInt(line.nextToken())-1;
