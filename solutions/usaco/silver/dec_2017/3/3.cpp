@@ -2,6 +2,7 @@
 
 using namespace std;
 
+#define ll long long
 #define MAXN 100005 //arbitrary #
 
 /* logic
@@ -18,9 +19,8 @@ then we know that the current chain of nodes points into a cycle that has alread
 
 //Each node points to next_node[node]
 
-bool visited[MAXN], contains[MAXN];
-long long number_of_cycles = 0;
-int next_node[MAXN], status[MAXN], N;
+int N, status[MAXN], parent[MAXN];
+ll ans = 0;
 
 void setIO(string name, bool includeout=false) { // name is nonempty for USACO file I/O
     ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
@@ -31,45 +31,42 @@ void setIO(string name, bool includeout=false) { // name is nonempty for USACO f
     }
 }
 
-void countCycles(int i) {
-
-    vector<int> there;
-
+void count(int i) {
+    bool there[MAXN];
     while (status[i] == 0) {
-        there.push_back(i);
-        i = next_node[i];
+        there[i] = true;
         status[i] = 1;
+        i = parent[i];
     }
-
-    if (count(there.begin(), there.end(), i)) {
+    if (there[i]) {
         int save = i;
         do {
             status[i] = 2;
-            i = next_node[i];
+            i = parent[i];
         } while (i != save);
     }
 }
 
 int main() {
-    setIO("shuffle");
+    setIO("shuffle", true);
     cin >> N;
 	for (int i = 0; i < N; i++) {
         int a;
         cin >> a;
         a--;
-        next_node[i] = a;
+        parent[i] = a;
     }
 	for (int i = 0;i < N;i++) {
-		if (!visited[i]) {
-			countCycles(i);
+		if (status[i] == 0) {
+			count(i);
         }
     }
     for (int i = 0; i < N; i++) {
         if (status[i] == 2) {
-            number_of_cycles++;
+            ans++;
         }
     }
-    cout << number_of_cycles << endl;
+    cout << ans << endl;
     return 0;
 }
  

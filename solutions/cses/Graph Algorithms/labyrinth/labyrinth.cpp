@@ -20,14 +20,6 @@ pair<int,int> aPos;
 string path = "";
 string currPath = "";
 
-void setIO(string name, bool includeout=false) { // name is nonempty for USACO file I/O
-    ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
-    // alternatively, cin.tie(0)->sync_with_stdio(0);
-    freopen((name+".in").c_str(), "r", stdin); // see Input & Output
-    if (includeout) {
-        freopen((name+".out").c_str(), "w", stdout);
-    }
-}
 
 void floodfill(int r, int c, string dir){
 	if(r < 0 || r >= n || c < 0 || c >= m) {
@@ -60,7 +52,6 @@ void floodfill(int r, int c, string dir){
 }
 
 int main() {
-    setIO("labryinth");
     cin >> n >> m;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
