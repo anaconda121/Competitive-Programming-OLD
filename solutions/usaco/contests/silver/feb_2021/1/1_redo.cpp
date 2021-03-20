@@ -37,6 +37,7 @@ void eval(int x, int y) {
             pair<int,int> next {x + xAdd[i], y + yAdd[i]};
             if (!there[next.f][next.s]) {
                 //cout << "pushing\n";
+                //next.f , next.s is coords for 4th dood
                 add.push({next.f, next.s});
             }
         }
