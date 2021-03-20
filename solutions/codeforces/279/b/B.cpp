@@ -1,3 +1,16 @@
+//https://codeforces.com/contest/279/problem/B
+
+/*
+sample case:
+
+3 1 2 1
+
+3 + 1 + 2 = 6 > 5
+subtract 3, 1 + 2 + 1 = 4 < 5 so we are good
+
+goal is to find largest subarray that sums to t
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -9,20 +22,18 @@ int main(){
 	for (int i = 0; i < n; i++) {
 		cin >> arr[i];
 	}
-	sort(arr, arr + n);
+	int pointer = 0;
 	int sum = 0;
-	long long count = 0;
-	int idx = 0;
-	while (sum < t) {
-		sum += arr[idx];
-		if (sum == t) {
-			break;
+	int count = 0;
+	for (int i = 0; i < n; i++) {
+		sum += arr[i];
+		if (sum <= t) {
+			count++;
+		} else {
+			sum -= arr[pointer];
+			pointer++;
 		}
-		idx++;
-		count++;
 	}
 	cout << count << endl;
 	return 0;
 }
-
-1 1 2 2 3 4
