@@ -20,30 +20,48 @@ ll total = 0;
 ll minShift = INT_MAX;
 
 bool cmp (pair<int,int> a, pair<int,int> b) {
-    return a.f < b.f;
+    if (a.f != b.f) {
+        return a.f < b.f;
+    }
+    return a.s < b.s;
 }
 
 int main(){
     setIO("lifeguards");
     cin >> n;
+    bool one = false;
     for (int i = 0; i < n; i++) {
         int st, t;
         cin >> st >> t;
-        if (st == 1) {
-            st = 0;
-        }
         times.pb({st, t});
+        if (st == 1) {
+            one = true;
+        }
     }
     sort(times.begin(), times.end(), cmp);
     for (int i = 0; i < n-1; i++) {
         if (times[i].s > times[i+1].f) {
             times[i+1].f = times[i].s;
+            if (times[i+1].s < times[i+1].f) {
+                times[i+1].s = times[i+1].f;
+            }
         }
     }
     for (int i = 0; i < n; i++) {
-        total += times[i].s - times[i].f;
-        minShift = min(minShift, times[i].s - times[i].f);
+        //cout << times[i].f << "  " << times[i].s << endl;
+        if (times[i].s - times[i].f <= 0) {
+            total += 0;
+            minShift = min(minShift, (long long ) 0);
+        } else {   
+            total += times[i].s - times[i].f;
+            minShift = min(minShift, times[i].s - times[i].f);
+        }
     }
-    cout << total - minShift << endl;
+    cout << minShift << endl;
+    cout << total << endl;
+    if (one)
+        cout << total - minShift+1 << endl;
+    else   
+        cout << total - minShift << endl;
     return 0;
 }
