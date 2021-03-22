@@ -17,8 +17,8 @@ int n;
 bool visited[MAXN][MAXM]; // keeps track of which nodes have been visited
 ll currA = 0;
 ll currP = 0;
-ll area = INT_MIN;
-ll perimeter = INT_MIN;
+ll area = 0;
+ll perimeter = 0;
 
 void setIO(string name, bool includeout=false) { // name is nonempty for USACO file I/O
     ios_base::sync_with_stdio(0); cin.tie(0); // see Fast Input & Output
@@ -64,10 +64,11 @@ int main(){
 				floodfill(i, j);
                 if (area == currA) {
                     perimeter = min(perimeter, currP);
-                } else {
-                    area = max(area, currA);
-                    perimeter = max(perimeter, currP);
+                } else if (currA > area) {
+                    area = currA;
+                    perimeter = currP;
                 }
+                //cout << currA << " , " << currP << endl; 
                 currA = currP = 0;
 			}
 		}
