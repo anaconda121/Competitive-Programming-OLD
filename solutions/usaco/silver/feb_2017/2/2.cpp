@@ -1,3 +1,13 @@
+/*LOGIC
+1. if broken, broken[a] = 1;
+else it will default to 0
+2. calc psums
+3. finding subarray of min value that has length k
+	a. in first iteration, sum of subarray from 0 - 6 (which is k for sample) can be represented by psums[i (starting at k)] - psums[i-k (0)]
+	b. similar thing can be said for the rest of the subarrays
+*/
+
+
 #include <bits/stdc++.h>
 
 using namespace std;
