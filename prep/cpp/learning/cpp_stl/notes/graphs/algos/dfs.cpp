@@ -4,7 +4,7 @@ using namespace std;
 
 
 int N; //num of edges
-vector<int> *adj; //adjacency list
+vector<int> adj[10001]; //adjacency list
 bool visited[10001];
 
 void addEdge(int x, int y) {
