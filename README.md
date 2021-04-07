@@ -34,3 +34,5 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
 - Feb 2021
   - Became an official contributor for usaco.guide
   - Passed USACO Silver (1000)
+- March 2021
+  - Did nothing kekw
