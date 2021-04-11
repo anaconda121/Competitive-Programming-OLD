@@ -22,6 +22,9 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
 - Silver Prep
   - can be found in solutions/usaco/silver
   - C++ solutions 
+- Gold Prep
+  - can be found in solutions/usaco/gold
+  - C++ Solutions
 - Contest Solutions and Explainations
   - can be found in usaco/contests
 
