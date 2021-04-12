@@ -18,7 +18,7 @@ All my notes and solutions for competitive programming (USACO, Codeforces, LeetC
 - Solutions for CP cousera course (https://www.coursera.org/learn/competitive-programming-core-skills/home/welcome)
   - can be found in prep/cpp/cpp/learning/coursera_course_docs
 - Notes for Math for CP YT Playlist (https://www.youtube.com/playlist?list=PL2q4fbVm1Ik4liHX78IRslXzUr8z5QxsG)
-  - can be found in math
+  - can be found in prep/cpp/learning/math
 - Silver Prep
   - can be found in solutions/usaco/silver
   - C++ solutions 
