@@ -1,3 +1,5 @@
+//https://codeforces.com/contest/162/problem/C -- basic prime factorization
+
 #include <bits/stdc++.h>
 
 using namespace std;
