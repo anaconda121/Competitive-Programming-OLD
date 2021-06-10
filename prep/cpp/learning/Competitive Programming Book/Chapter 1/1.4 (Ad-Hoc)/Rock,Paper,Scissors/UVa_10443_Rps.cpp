@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int moves[4][2] = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
+int moves[4][2] = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
 
 void setIO(string name = "", bool includeout = false) {
     ios_base::sync_with_stdio(0); cin.tie(0);
@@ -15,14 +15,14 @@ void setIO(string name = "", bool includeout = false) {
 }
 
 bool check(char a, char b) {
-    if(a == 'R'){
-		if(b == 'S') {
+    if(a == 'P'){
+		if(b == 'R') {
 			return true;
         }
         return false;
 	}
-	if(a == 'P'){
-		if(b == 'R') {
+    if(a == 'R'){
+		if(b == 'S') {
 			return true;
         }
         return false;
