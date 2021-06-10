@@ -1,0 +1,108 @@
+In programming, an n bit integer is internally stored as a binary number that
+consists of n bits. For example, the C++ type int is a 32-bit type, which means
+that every int number consists of 32 bits.
+
+Here is the bit representation of the int number 43:
+00000000000000000000000000101011
+
+convert bit representation to #:
+
+b_k * 2^k + ... + b_2 * 2^2
+
+E.g. 0 * 2^31 + 0 * 2^30 ... + 1 * 2^5 + 0 * 2^4 + 1 * 2^3 + 0 * 2^2 + 0 * 2^1 + 1 * 2^0 = 43
+
+Representing Negative Numbers:
+
+Use two's complement:
+opposite number of a number is calculated by first inverting all the bits
+in the number, and then increasing the number by one.
+
+11111111111111111111111111010101
+
+For 43:
+1. invert
+11111111111111111111111111010100
+
+2. add 1
+11111111111111111111111111010100
++
+                                1
+_________________________________
+0+1 = 1
+11111111111111111111111111010101 --> FINAL
+
+Bit Operations:
+
+1. and (&)
+
+x & y produces a number that has 1 bits in positions where x and y both have 1 bits
+
+E.g. 
+    10110 (22)
+&   11010 (26)
+____________
+    10010 (18)
+
+2. or (|)
+
+x | y produces a number that has 1 bits in positions where one of x or y has a bit
+
+E.g.
+    10110 (22)
+|   11010 (26)
+____________
+    11110 (30)
+
+3. xor (^)
+
+x ^ y produces a number that has one bits in positions where exactly one of x and y have one bits
+
+E.g.
+    10110 (22)
+^   11010 (26)
+____________
+    01100 (12)
+
+4. not (~)
+
+produces a number where all the bits of x have been inverted.
+
+~x = -x-1
+~29 = -30
+
+5. bit shifts (<< && >>)
+
+x << k appends k zero bits to the number
+x >> k removes the last k bits from the number
+
+E.g. 14 << 2 = 56
+14 = 1110 
+14 << 2 = 11000, which equals 56
+
+E.g. 49 >> 3 = 6
+49 = 110001
+49 >> 3 = 110, which equals 6
+
+Quick Bit Formulas:
+
+1. x | (1 << k) sets the kth bit of x to 1
+2. x & ~(1 << k) sets the kth bit of x to 0
+3. x ^ (1 << k) inverts the kth bit of x
+4. x & (x-1) sets the last bit of x to 0
+5. x & (-x) sets all the one bits to 0
+6. x | (x-1) inverts all bits after last 1 bit
+7. x & (x-1) = 0 means x is a power of 2
+
+Applications:
+
+1. Representing Sets w/ bits
+
+Every subset of a set {0,1,2,...,n−1} can be represented as an n bit integer whose
+one bits indicate which elements belong to the subset. This is an efficient way to
+represent sets, because every element requires only one bit of memory, and set
+operations can be implemented as bit operations.
+
+{1,3,4,8} 32 bit representation is:
+00000000000000000000000100011010 = 2^8 + 2^4 + 2^3 + 2^1 = 282
+
+see Bit_Playground.cpp for more info
