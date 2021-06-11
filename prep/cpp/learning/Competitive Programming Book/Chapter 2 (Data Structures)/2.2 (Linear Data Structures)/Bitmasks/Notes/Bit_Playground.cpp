@@ -92,5 +92,7 @@ int main() {
     //set of all elements that are in a but not in  b
     // a & (~b) works b/c all the 1's in b after ~b would be where b does not have a value
     // and & operator finds all positions where a and b both have 1's, so this is perfecto
+
+    cout << ((1 << 2 ) >> 1) << endl;
     return 0;
 }
